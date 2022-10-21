@@ -207,7 +207,7 @@ contract TransitSwapRouter is Ownable, ReentrancyGuard, Pausable {
                 TransferHelper.safeTransferFrom(desc.srcToken, msg.sender, _transit_cross, desc.amount);
             } else {
                 TransferHelper.safeTransferFrom(desc.srcToken, msg.sender, address(this), desc.amount);
-                if (TetherToken == desc.dstToken) { 
+                if (TetherToken == desc.srcToken) { 
                     TransferHelper.safeTransferWithoutRequire(desc.srcToken, _transit_cross, desc.amount.sub(fee));
                 } else {
                     TransferHelper.safeTransfer(desc.srcToken, _transit_cross, desc.amount.sub(fee));   
