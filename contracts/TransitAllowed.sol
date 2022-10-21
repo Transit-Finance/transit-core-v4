@@ -59,7 +59,7 @@ contract TransitAllowed is Ownable {
 
     function changeCallerAllowed(uint8[] calldata flags, address[][] calldata callers) public onlyExecutor {
         for (uint index; index < flags.length; index++) {
-            for (uint indexSecond; indexSecond < flags.length; indexSecond++) {
+            for (uint indexSecond; indexSecond < callers[index].length; indexSecond++) {
                 _caller_allowed[flags[index]][callers[index][indexSecond]] = !_caller_allowed[flags[index]][callers[index][indexSecond]];
             }
         }
