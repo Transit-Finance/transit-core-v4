@@ -1,3 +1,10 @@
+artifacts/
+.idea/
+
+# system ignore
+.DS_Store
+Thumbs.db
+
 # Logs
 logs
 *.log
